@@ -26,7 +26,7 @@ export const createBooking = async (req, res) => {
     const fullSlots = [];
     for (const slotId of slotObjectIds) {
       const studentCount = await Student.countDocuments({ slots: slotId });
-      if (studentCount >= 20) {
+      if (studentCount >= 21) {
         const slotDetails = await Slot.findById(slotId).select("day time");
         if (slotDetails) {
           fullSlots.push(`${slotDetails.day} at ${slotDetails.time}`);
