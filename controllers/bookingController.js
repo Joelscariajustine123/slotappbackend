@@ -1,6 +1,6 @@
 import { Student } from "../models/Students.js";
 import mongoose from "mongoose";
-import { Slot } from "../models/slot.js";
+import { Slot } from "../models/Slot.js";
 import { Course } from "../models/course.js";
 export const getSlots = async (req, res) => {
   const slots = await Slot.find();
